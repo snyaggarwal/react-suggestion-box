@@ -49,5 +49,5 @@ export default class MySuggestionComponent extends React.Component {
 | onSubmit                | func           |                   | Dialog onSubmit handler (Mandatory) |
 
 ## Screenshot
-![alt text](https://github.com/snyaggarwal/react-suggestion-box/blob/master/screenshots/Dialog-Screenshot.png?raw=true)
+![alt text](https://github.com/snyaggarwal/react-suggestion-box/blob/master/screenshots/FullPage.png?raw=true)
 
