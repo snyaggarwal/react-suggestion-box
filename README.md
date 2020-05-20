@@ -29,10 +29,7 @@ export default class MySuggestionComponent extends React.Component {
 
   render() {
     return (
-      <ReactSuggestionBox
-        title='Send Suggestion'
-        onSubmit={this.onSubmit}
-      />
+      <ReactSuggestionBox onSubmit={this.onSubmit} />
     );
   }
 }
@@ -50,3 +47,7 @@ export default class MySuggestionComponent extends React.Component {
 | cancelButtonLabel       | string         | "Cancel"          | Dialog Cancel button label          |
 | submitButtonLabel       | string         | "Send"            | Dialog Submit button label          |
 | onSubmit                | func           |                   | Dialog onSubmit handler (Mandatory) |
+
+## Screenshot
+![alt text](https://github.com/snyaggarwal/react-suggestion-box/blob/master/screenshots/Dialog-Screenshot.png?raw=true)
+
