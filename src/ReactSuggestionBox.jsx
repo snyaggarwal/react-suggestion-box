@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import html2canvas from 'html2canvas';
-import { Suggestion as SuggestionIcon } from '@material-ui/icons';
+import { Feedback as SuggestionIcon } from '@material-ui/icons';
 import {
   TextField, DialogTitle, DialogContent, DialogActions, Dialog, Tooltip, Button,
 } from '@material-ui/core';
+import './reactSuggestionBox.scss'
 
-class Suggestion extends React.Component {
+class ReactSuggestionBox extends React.Component {
   constructor(props) {
     super(props);
 
@@ -80,20 +81,21 @@ class Suggestion extends React.Component {
 
   render() {
     const {
-      title, submitButtonLabel, cancelButtonLabel
+      title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
+      buttonTooltipText
     } = this.props;
     return (
-      <div className="left-bar-control">
+      <div className={containerClassName}>
         <Button
           fullWidth
           type="button"
           href="#"
           onClick={this.showSuggestionPanel}
         >
-          <Tooltip title="Suggestion" placement="right">
+          <Tooltip title={buttonTooltipText || "Suggestion"} placement="right">
             <SuggestionIcon style={{marginLeft: '-2px', marginRight: '17px'}}/>
           </Tooltip>
-          <span className="nav-text">Suggestion</span>
+          <span className="nav-text">{mainButtonLabel || 'Suggestion'}</span>
         </Button>
         <Dialog
           open={this.state.feedbackDialgOpen}
@@ -108,7 +110,6 @@ class Suggestion extends React.Component {
           <DialogContent className="feedback-dialog-content">
             <TextField
               style={{backgroundColor: '#fff'}}
-              className="text-area"
               id="description"
               placeholder="Describe your issues or share your ideas"
               value={this.state.fields.description.value}
@@ -139,4 +140,4 @@ Suggestion.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-export default Suggestion;
+export default ReactSuggestionBox;

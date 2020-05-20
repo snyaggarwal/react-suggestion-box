@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/ReactSuggestionBox.jsx',
   output: {
     path: path.resolve('build'),
-    filename: "index.js",
+    filename: "ReactSuggestionBox.js",
     libraryTarget: "commonjs2"
   },
   module: {

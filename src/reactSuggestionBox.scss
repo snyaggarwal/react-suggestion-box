@@ -1,0 +1,32 @@
+.feedback-dialog {
+    .feedback-section {
+        background-color: rgb(97, 125, 138);
+        h2 {
+            color: #fff;
+            font-weight: 300;
+        }
+    }
+    textarea {
+        border: 1px solid lightgray;
+        padding: 5px;
+    }
+    textarea::before {
+        display: none !important;
+    }
+    .feedback-dialog-content {
+        text-align: center;
+        margin-top: 10px;
+        background-color: rgb(249, 249, 249);
+
+        div::after, div::before {
+            display: none
+        }
+        div {
+            padding: 0px;
+        }
+    }
+}
+span.nav-text {
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
