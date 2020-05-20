@@ -25,7 +25,7 @@ class ReactSuggestionBox extends React.Component {
       }
     };
 
-    this.state = {...this.defaultState};
+    this.state = Object.assign({}, this.defaultState);
     this.showSuggestionPanel = this.showSuggestionPanel.bind(this);
     this.handleSuggestionDialogClose = this.handleSuggestionDialogClose.bind(this);
     this.sendSuggestion = this.sendSuggestion.bind(this);
@@ -49,7 +49,7 @@ class ReactSuggestionBox extends React.Component {
   }
 
   resetDialogAndOpen() {
-    this.setState({...this.defaultState, feedbackDialgOpen: true});
+    this.setState({...Object.assign({}, this.defaultState), feedbackDialgOpen: true});
   }
 
   handleSuggestionDialogClose() {
