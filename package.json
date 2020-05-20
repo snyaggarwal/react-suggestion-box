@@ -1,0 +1,39 @@
+{
+  "name": "react-suggestion-box",
+  "version": "1.0.0",
+  "description": "Material-ui based react user suggestions/feedback/complaints dialog box with screenshot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snyaggarwal/react-suggestion-box.git"
+  },
+  "keywords": [
+    "suggestion",
+    "suggestion-box",
+    "suggestion-dialog",
+    "complaint-box",
+    "complaint-dialog",
+    "user-feedbacks",
+    "feedbacks",
+    "user-suggestions",
+    "user-complaints",
+    "feedback-box",
+    "feedback-dialog",
+    "feedback-canvas",
+    "canvas",
+    "react",
+    "material-ui",
+    "materialui",
+    "dialog",
+    "npm"
+  ],
+  "author": "Sunny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snyaggarwal/react-suggestion-box/issues"
+  },
+  "homepage": "https://github.com/snyaggarwal/react-suggestion-box#readme"
+}
