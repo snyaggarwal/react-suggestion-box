@@ -1,6 +1,6 @@
 {
   "name": "react-suggestion-box",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Material-ui based react user suggestions/feedback/complaints dialog box with screenshot",
   "main": "./build/ReactSuggestionBox.js",
   "scripts": {
