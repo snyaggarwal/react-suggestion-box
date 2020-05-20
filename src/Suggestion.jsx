@@ -57,14 +57,13 @@ class Suggestion extends React.Component {
 
   sendSuggestion() {
     if(this.state.fields.description.value) {
-      const payload = {
-        description: this.state.fields.description.value,
-        image: this.state.fields.image.value,
-        url: window.location.href,
-      };
       this.setState({feedbackDialgOpen: false}, () => {
         if(this.props.onSubmit)
-          this.props.onSubmit()
+          this.props.onSubmit({
+            description: this.state.fields.description.value,
+            image: this.state.fields.image.value,
+            url: window.location.href,
+          })
       });
     } else {
       const newState = this.state;
