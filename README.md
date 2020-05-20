@@ -14,26 +14,14 @@ npm install --save react-suggestion-box
 
 // with yarn
 yarn add react-suggestion-box
-
 ```
 
 ## Usage
 
 ```jsx
-import React from 'react';
 import ReactSuggestionBox from 'react-suggestion-box';
-
-export default class MySuggestionComponent extends React.Component {
-  onSubmit = data => {
-  }
-
-  render() {
-    return (
-      <ReactSuggestionBox onSubmit={this.onSubmit} />
-    );
-  }
-}
-
+....
+<ReactSuggestionBox onSubmit={onSubmit} />
 ```
 
 ## Props
