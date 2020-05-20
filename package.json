@@ -2,7 +2,7 @@
   "name": "react-suggestion-box",
   "version": "1.0.2",
   "description": "Material-ui based react user suggestions/feedback/complaints dialog box with screenshot",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "build": "webpack"
   },
