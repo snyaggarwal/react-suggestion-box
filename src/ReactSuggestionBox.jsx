@@ -82,7 +82,7 @@ class ReactSuggestionBox extends React.Component {
   render() {
     const {
       title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
-      buttonTooltipText
+      buttonTooltipText, descriptionPlaceholder
     } = this.props;
     return (
       <div className={containerClassName}>
@@ -111,7 +111,7 @@ class ReactSuggestionBox extends React.Component {
             <TextField
               style={{backgroundColor: '#fff'}}
               id="description"
-              placeholder="Describe your issues or share your ideas"
+              placeholder={descriptionPlaceholder || "Describe your issues or share your ideas"}
               value={this.state.fields.description.value}
               error={this.state.fields.description.errors[0]}
               helperText= {this.state.fields.description.errors[0]}
@@ -136,8 +136,8 @@ class ReactSuggestionBox extends React.Component {
   }
 }
 
-Suggestion.propTypes = {
-  dispatch: PropTypes.func.isRequired
+ReactSuggestionBox.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ReactSuggestionBox;
