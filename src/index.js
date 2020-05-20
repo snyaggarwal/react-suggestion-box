@@ -1,1 +1,3 @@
-export {default as Suggestion} from './Suggestion.jsx';
+import Suggestion from './Suggestion.jsx';
+
+export default Suggestion;
