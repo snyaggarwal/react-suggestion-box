@@ -1,2 +1,2 @@
 # react-suggestion-box
-A react user suggestions/feedback/complaints dialog + screenshot
+Material-ui based react user suggestions/feedback/complaints dialog box with screenshot
