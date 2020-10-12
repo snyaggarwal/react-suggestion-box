@@ -84,7 +84,7 @@ class ReactSuggestionBox extends React.Component {
       title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
       buttonTooltipText, descriptionPlaceholder
     } = this.props;
-    const hasButtonLabel = mainButtonLabel !== false;
+    const hasButtonLabel = mainButtonLabel != false;
     return (
       <div className={containerClassName}>
         <Button
