@@ -84,6 +84,7 @@ class ReactSuggestionBox extends React.Component {
       title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
       buttonTooltipText, descriptionPlaceholder
     } = this.props;
+    const hasButtonLabel = mainButtonLabel !== false;
     return (
       <div className={containerClassName}>
         <Button
@@ -93,9 +94,12 @@ class ReactSuggestionBox extends React.Component {
           onClick={this.showSuggestionPanel}
         >
           <Tooltip title={buttonTooltipText || "Suggestion"} placement="right">
-            <SuggestionIcon style={{marginLeft: '-2px', marginRight: '17px'}}/>
+            <SuggestionIcon style={hasButtonLabel ? {marginLeft: '-2px', marginRight: '17px'} : {}}/>
           </Tooltip>
-          <span className="nav-text">{mainButtonLabel || 'Suggestion'}</span>
+          {
+            hasButtonLabel &&
+            <span className="nav-text">{mainButtonLabel || 'Suggestion'}</span>
+          }
         </Button>
         <Dialog
           open={this.state.feedbackDialgOpen}
