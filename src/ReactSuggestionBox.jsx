@@ -34,6 +34,13 @@ class ReactSuggestionBox extends React.Component {
 
   showSuggestionPanel(event) {
     window.scrollTo(0,0);
+    var svgElements = document.body.querySelectorAll('svg');
+    svgElements.forEach(function(item) {
+      item.setAttribute("width", item.getBoundingClientRect().width);
+      item.setAttribute("height", item.getBoundingClientRect().height);
+      item.style.width = null;
+      item.style.height= null;
+    });
     html2canvas(document.querySelector("#root")).then(canvas => {
       let pngUrl = canvas.toDataURL();
       this.resetDialogAndOpen();
@@ -82,9 +89,10 @@ class ReactSuggestionBox extends React.Component {
   render() {
     const {
       title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
-      buttonTooltipText, descriptionPlaceholder
+      buttonTooltipText, descriptionPlaceholder, iconStyles, icon
     } = this.props;
     const hasButtonLabel = mainButtonLabel != false;
+    const styles = hasButtonLabel ? Object.assign({}, {marginLeft: '-2px', marginRight: '17px'}, (iconStyles || {})) : (iconStyles || {})
     return (
       <div className={containerClassName}>
         <Button
@@ -94,7 +102,9 @@ class ReactSuggestionBox extends React.Component {
           onClick={this.showSuggestionPanel}
         >
           <Tooltip title={buttonTooltipText || "Suggestion"} placement="right">
-            <SuggestionIcon style={hasButtonLabel ? {marginLeft: '-2px', marginRight: '17px'} : {}}/>
+            {
+              icon ? icon : <SuggestionIcon style={styles} />
+            }
           </Tooltip>
           {
             hasButtonLabel &&
@@ -127,10 +137,10 @@ class ReactSuggestionBox extends React.Component {
             <img width="100%" className="screen" style={{marginTop: '25px'}} />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleSuggestionDialogClose} variant="raised">
+            <Button onClick={this.handleSuggestionDialogClose} variant="contained">
               {cancelButtonLabel || "Cancel"}
             </Button>
-            <Button onClick={this.sendSuggestion} color='primary' variant="raised">
+            <Button onClick={this.sendSuggestion} color='primary' variant="contained">
               {submitButtonLabel || 'Send'}
             </Button>
           </DialogActions>
