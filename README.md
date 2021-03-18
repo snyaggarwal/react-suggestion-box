@@ -1,5 +1,5 @@
 # react-suggestion-box
-React & Material-ui based user suggestions/feedback/complaints dialog box with screenshot.
+React & Material-UI based user suggestions/feedback/complaints dialog box with screenshot.
 
 
 [![NPM](https://img.shields.io/npm/v/react-suggestion-box.svg)](https://www.npmjs.com/package/react-suggestion-box)
