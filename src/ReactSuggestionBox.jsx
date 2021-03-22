@@ -64,6 +64,13 @@ class ReactSuggestionBox extends React.Component {
   }
 
   sendSuggestion() {
+    const { beforeSendValidator } = this.props;
+    let isValid = true;
+    if(beforeSendValidator)
+      isValid = beforeSendValidator()
+    if(!isValid)
+      return
+
     if(this.state.fields.description.value) {
       this.setState({feedbackDialgOpen: false}, () => {
         if(this.props.onSubmit)
@@ -89,7 +96,8 @@ class ReactSuggestionBox extends React.Component {
   render() {
     const {
       title, submitButtonLabel, cancelButtonLabel, containerClassName, mainButtonLabel,
-      buttonTooltipText, descriptionPlaceholder, iconStyles, icon
+      buttonTooltipText, descriptionPlaceholder, iconStyles, icon, startControls, endControls,
+      isSendDisabled
     } = this.props;
     const hasButtonLabel = mainButtonLabel != false;
     const styles = hasButtonLabel ? Object.assign({}, {marginLeft: '-2px', marginRight: '17px'}, (iconStyles || {})) : (iconStyles || {})
@@ -122,6 +130,7 @@ class ReactSuggestionBox extends React.Component {
             {title || "Send Suggestion"}
           </DialogTitle>
           <DialogContent className="feedback-dialog-content">
+            {startControls}
             <TextField
               style={{backgroundColor: '#fff'}}
               id="description"
@@ -134,13 +143,14 @@ class ReactSuggestionBox extends React.Component {
               onChange={this.handleDescriptionChange}
               fullWidth
             />
+            {endControls}
             <img width="100%" className="screen" style={{marginTop: '25px'}} />
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleSuggestionDialogClose} variant="contained">
               {cancelButtonLabel || "Cancel"}
             </Button>
-            <Button onClick={this.sendSuggestion} color='primary' variant="contained">
+            <Button onClick={this.sendSuggestion} color='primary' variant="contained" disabled={isSendDisabled}>
               {submitButtonLabel || 'Send'}
             </Button>
           </DialogActions>
