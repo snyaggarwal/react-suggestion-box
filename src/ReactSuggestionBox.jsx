@@ -103,8 +103,8 @@ class ReactSuggestionBox extends React.Component {
     const hasButtonLabel = mainButtonLabel != false;
     const styles = hasButtonLabel ? Object.assign({}, {marginLeft: '-2px', marginRight: '17px'}, (iconStyles || {})) : (iconStyles || {})
     return (
-      <StylesProvider injectFirst>
       <div className={containerClassName}>
+      <StylesProvider injectFirst>
         <Button
           fullWidth
           type="button"
@@ -157,8 +157,8 @@ class ReactSuggestionBox extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
       </StylesProvider>
+      </div>
     );
   }
 }
