@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import html2canvas from 'html2canvas';
 import { Feedback as SuggestionIcon } from '@material-ui/icons';
+import { StylesProvider } from '@material-ui/core/styles';
 import {
   TextField, DialogTitle, DialogContent, DialogActions, Dialog, Tooltip, Button,
 } from '@material-ui/core';
@@ -102,6 +103,7 @@ class ReactSuggestionBox extends React.Component {
     const hasButtonLabel = mainButtonLabel != false;
     const styles = hasButtonLabel ? Object.assign({}, {marginLeft: '-2px', marginRight: '17px'}, (iconStyles || {})) : (iconStyles || {})
     return (
+      <StylesProvider injectFirst>
       <div className={containerClassName}>
         <Button
           fullWidth
@@ -156,6 +158,7 @@ class ReactSuggestionBox extends React.Component {
           </DialogActions>
         </Dialog>
       </div>
+      </StylesProvider>
     );
   }
 }
